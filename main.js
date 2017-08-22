@@ -12,8 +12,6 @@ function Dog (status, color, hungry, owner) {
   this.color = color;
   this.hungry = hungry;
   this.owner = owner;
-
-
 }
 
 let sadie = new Dog('normal', 'black', false, 'mason');
@@ -31,16 +29,18 @@ let atticus = new Dog()
 // Human Constructor & Prototype
 function Human (cool) {
   this.cool = cool;
-  this.pet = function(){
-    sadie.status = 'happy';
-  }
-  this.feed =function(){
-    moonshine.hungry = false;
-  }
 }
+
  let mason = new Human(false);
  let julia = new Human(true);
 
+Human.prototype.pet = function(dog){
+  return dog.status = 'happy';
+}
+
+Human.prototype.feed = function(dog){
+  return dog.hungry = false;
+}
 
 // Instances of Human
 // Needed: mason, julia
